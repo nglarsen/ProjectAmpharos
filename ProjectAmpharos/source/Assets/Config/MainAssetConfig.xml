@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structures>
+  <GameAsset name="Block">
+    <Component name ="Sprite"/>
+    <Component name ="Body" density="15.0f" restitution="0.0f" angularDamping="0.0f" bodyType="GAME_STATIC" bodyShape="GAME_RECTANGLE" physicsOn ="true" />
+  </GameAsset>
+  <GameAsset name="ItemBlock">
+    <Component name ="Sprite"/>
+    <Component name ="Body" density="15.0f" restitution="0.0f" angularDamping="0.0f" bodyType="GAME_KINETIC" bodyShape="GAME_RECTANGLE" physicsOn ="true" />
+    <Component name ="ItemBlock" powerUp="lightning"/>
+  </GameAsset>
+  <GameAsset name="Player">
+    <Component name="Sprite"/>
+    <Component name="Body" density="1.0f" restitution="0.0f" angularDamping="4.0f" linearDamping="0.0f" bodyType="GAME_DYNAMIC" bodyShape="GAME_CIRCLE" physicsOn = "true"/>
+    <Component name="Controller" />
+  </GameAsset>
+</Structures>

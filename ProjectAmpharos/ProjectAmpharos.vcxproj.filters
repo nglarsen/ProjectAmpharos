@@ -13,5 +13,173 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Definitions">
+      <UniqueIdentifier>{3a9703d6-5caa-45b5-93d5-f2f08b2d9505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{2defa5a0-3972-42b1-af05-fc1bfa8eb83e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Devices">
+      <UniqueIdentifier>{aaf5b0bc-e074-447c-9d4b-454fb6187e93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Components">
+      <UniqueIdentifier>{9253fef7-3f3f-435b-b4dd-e99745d7c6e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Components\Parent">
+      <UniqueIdentifier>{6f9a0904-063e-46e1-8e71-48324603ab40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\GameObject">
+      <UniqueIdentifier>{13c20d97-4550-4334-a7e2-6ec356cfac0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Libraries">
+      <UniqueIdentifier>{368ba754-9ae9-4a1f-bc39-eeadba61d576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Third Party">
+      <UniqueIdentifier>{51a5da85-5a7c-4622-92bc-3184a9a7b5fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{1b35751e-01ef-4089-9451-2f9dc688029a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Components\List">
+      <UniqueIdentifier>{657c08b7-bf82-466b-9012-86327e408826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Templates">
+      <UniqueIdentifier>{d2d5f32b-c35c-42e4-918a-78deea989e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\XML">
+      <UniqueIdentifier>{2a15ec3f-ef84-4db7-90b7-9e3aa3040af8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\ThirdParty">
+      <UniqueIdentifier>{733789ff-53b1-4608-b2b5-ada665cc4d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Libraries">
+      <UniqueIdentifier>{d6962d0f-e7a0-413a-acd3-936584f7ae5d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Template.cpp">
+      <Filter>Resource Files\Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Box2DDebugDraw.cpp">
+      <Filter>Source Files\Engine\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ArtAssetLibrary.cpp">
+      <Filter>Source Files\Engine\Libraries</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ThirdParty\Box2D\Box2D.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_image.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_main.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_ttf.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Define.h">
+      <Filter>Header Files\Definitions</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GraphicsDevice.h">
+      <Filter>Header Files\Engine\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SpriteComponent.h">
+      <Filter>Header Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Component.h">
+      <Filter>Header Files\Engine\Components\Parent</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GameObject.h">
+      <Filter>Header Files\Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ControllerDevice.h">
+      <Filter>Header Files\Engine\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PhysicsDevice.h">
+      <Filter>Header Files\Engine\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Texture.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PhysicsAssetLibrary.h">
+      <Filter>Header Files\Engine\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SoundDevice.h">
+      <Filter>Header Files\Engine\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ArtAssetLibrary.h">
+      <Filter>Header Files\Engine\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ComponentAssetLibrary.h">
+      <Filter>Header Files\Engine\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ObjectAssetLibrary.h">
+      <Filter>Header Files\Engine\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SoundAssetLibrary.h">
+      <Filter>Header Files\Engine\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="source\View.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ObjectFactory.h">
+      <Filter>Header Files\Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Timer.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_stdinc.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ComponentsList.h">
+      <Filter>Header Files\Engine\Components\List</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BodyComponent.h">
+      <Filter>Header Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ControllerComponent.h">
+      <Filter>Header Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PowerUpComponent.h">
+      <Filter>Header Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ItemBlockComponent.h">
+      <Filter>Header Files\Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Template.h">
+      <Filter>Resource Files\Templates</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Box2DDebugDraw.h">
+      <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="source\Assets\Config\MainAssetConfig.xml">
+      <Filter>Resource Files\XML</Filter>
+    </Xml>
+    <Xml Include="source\Assets\Config\SpriteConfig.xml">
+      <Filter>Resource Files\XML</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

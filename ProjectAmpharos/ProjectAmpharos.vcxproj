@@ -69,14 +69,22 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\lib\x86;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\lib\x86;$(LibraryPath);$(ProjectDir)source\ThirdParty\Box2D\Box2D\lib;$(ProjectDir)source\ThirdParty\SDL2\lib</LibraryPath>
+    <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\include;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\include;$(IncludePath);$(ProjectDir)source\ThirdParty\Box2D;$(ProjectDir)source\ThirdParty\SDL2\include</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0;%(AdditionalIncludeDirectories);$(ProjectDir)Source\ThirdParty\Box2D;$(ProjectDir)Source\ThirdParty\Box2D\Box2D;$(ProjectDir)Source\ThirdParty\SDL2\</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);Box2D.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_gfx.lib;</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -115,6 +123,54 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\ArtAssetLibrary.cpp" />
+    <ClCompile Include="source\Box2DDebugDraw.cpp" />
+    <ClCompile Include="source\Game.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ResourceManager.cpp" />
+    <ClCompile Include="source\Template.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\ArtAssetLibrary.h" />
+    <ClInclude Include="source\BodyComponent.h" />
+    <ClInclude Include="source\Box2DDebugDraw.h" />
+    <ClInclude Include="source\Component.h" />
+    <ClInclude Include="source\ComponentAssetLibrary.h" />
+    <ClInclude Include="source\ComponentsList.h" />
+    <ClInclude Include="source\ControllerComponent.h" />
+    <ClInclude Include="source\ControllerDevice.h" />
+    <ClInclude Include="source\Define.h" />
+    <ClInclude Include="source\Game.h" />
+    <ClInclude Include="source\GameObject.h" />
+    <ClInclude Include="source\GraphicsDevice.h" />
+    <ClInclude Include="source\ItemBlockComponent.h" />
+    <ClInclude Include="source\ObjectAssetLibrary.h" />
+    <ClInclude Include="source\ObjectFactory.h" />
+    <ClInclude Include="source\PhysicsAssetLibrary.h" />
+    <ClInclude Include="source\PhysicsDevice.h" />
+    <ClInclude Include="source\PowerUpComponent.h" />
+    <ClInclude Include="source\ResourceManager.h" />
+    <ClInclude Include="source\SoundAssetLibrary.h" />
+    <ClInclude Include="source\SoundDevice.h" />
+    <ClInclude Include="source\SpriteComponent.h" />
+    <ClInclude Include="source\Template.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="source\Texture.h" />
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL.h" />
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_image.h" />
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_main.h" />
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_stdinc.h" />
+    <ClInclude Include="source\ThirdParty\SDL2\include\SDL_ttf.h" />
+    <ClInclude Include="source\Timer.h" />
+    <ClInclude Include="source\View.h" />
+    <ClInclude Include="ThirdParty\Box2D\Box2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="source\Assets\Config\MainAssetConfig.xml" />
+    <Xml Include="source\Assets\Config\SpriteConfig.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

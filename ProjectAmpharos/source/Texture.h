@@ -16,6 +16,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Define.h"
+#include "tinyxml\tinyxml.h"
 
 class Texture
 {
@@ -25,19 +26,29 @@ public:
 
 	bool load(SDL_Renderer* renderer, std::string path);
 	bool load(SDL_Texture* texture);
-
+	bool XMLLoad(SDL_Renderer* renderer, TiXmlElement* element);
 	void free();
 
 	void Draw(SDL_Renderer* renderer, GAME_VEC position, GAME_FLT angle, SDL_Rect* clip = NULL);
 
-	int getWidth();
-	int getHeight();
+	int getWidth() { return width; }
+	int getHeight() { return height; }
+	int getNumStates() { return numStates; }
+	int getNumClips() { return numClips; }
+	SDL_Rect** getClip() { return clip; }
+	std::string getName() { return name; }
 
 private:
 	SDL_Texture * texture;
-
+	SDL_Rect** clip;
 	int height;
 	int width;
+	int numClips;
+	int numStates;
+	int animationState;
+
+
+	std::string name;
 };
 
 

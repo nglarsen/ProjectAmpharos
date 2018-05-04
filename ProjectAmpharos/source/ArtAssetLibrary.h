@@ -28,7 +28,7 @@ public:
 	bool AddAsset(std::string name, std::string path);
 
 private:
-	std::map < std::string,Texture*[]> artLibrary;
+	std::map < std::string, Texture*> artLibrary;
 	GraphicsDevice* gDevice;
 };
 

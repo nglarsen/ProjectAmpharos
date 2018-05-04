@@ -73,6 +73,10 @@
     <LibraryPath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\lib\x86;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\lib\x86;$(LibraryPath);$(ProjectDir)source\ThirdParty\Box2D\Box2D\lib;$(ProjectDir)source\ThirdParty\SDL2\lib</LibraryPath>
     <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\include;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\include;$(IncludePath);$(ProjectDir)source\ThirdParty\Box2D;$(ProjectDir)source\ThirdParty\SDL2\include</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\include;$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\include;$(ProjectDir)source\ThirdParty\SDL2\include;$(ProjectDir)source\ThirdParty\Box2D\Box2D;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)source\ThirdParty\SDL2\lib;$(ProjectDir)source\ThirdParty\Box2D\Box2D\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -93,6 +97,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -128,6 +135,7 @@
     <ClCompile Include="source\Game.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ResourceManager.cpp" />
+    <ClCompile Include="source\Texture.cpp" />
     <ClCompile Include="source\Template.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>

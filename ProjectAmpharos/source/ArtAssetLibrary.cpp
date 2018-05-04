@@ -35,13 +35,27 @@ bool ArtAssetLibrary::AddAsset(std::string name, std::string path)
 	////<State>
 	//////<Clip>
 	TiXmlElement* spriteElement = spriteRoot->FirstChildElement();
-	std::string texturePath = spriteElement->Attribute("sheet");
-	
-	std::vector<Texture*> tempTextures;
 	
 	/*Load textures into tempTextures to add to artLibrary*/
+	do 
+	{
+		Texture* tmpTexture = new Texture();
+		if (name == spriteElement->Attribute("name"))
+		{
+			artLibrary[name] = new Texture();
+			artLibrary[name]->XMLLoad(gDevice->GetRenderer(), spriteElement);
+		}
+		else
+		{
+			spriteElement->NextSiblingElement();
+		}
 
-	artLibrary[name] = tempTextures;
+	} while (spriteElement);
+	if (artLibrary[name] == nullptr)
+	{
+		printf("error loading texture\n");
+		system("pause");
+	}
 
 
 

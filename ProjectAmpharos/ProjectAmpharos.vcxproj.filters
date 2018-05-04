@@ -75,6 +75,9 @@
     <ClCompile Include="source\ArtAssetLibrary.cpp">
       <Filter>Source Files\Engine\Libraries</Filter>
     </ClCompile>
+    <ClCompile Include="source\Texture.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ThirdParty\Box2D\Box2D.h">

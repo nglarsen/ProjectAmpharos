@@ -16,10 +16,13 @@
 #include "Define.h"
 #include "PowerUpComponent.h"
 #include "Texture.h"
+#include "ArtAssetLibrary.h"
 
+class SpriteComponent;
 
 class ItemBlockComponent : public Component
 {
+public:
 	//Init open to false
 	ItemBlockComponent(GameObject* owner);
 	~ItemBlockComponent();
@@ -41,7 +44,8 @@ private:
 	bool looted;
 	GameObject* storedItem;
 	Texture* swapTexture;
-
+	ArtAssetLibrary* artLibrary;
+	GAME_OBJECTFACTORY_PRESETS presets;
 };
 
 

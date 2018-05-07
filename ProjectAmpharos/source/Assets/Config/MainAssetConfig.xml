@@ -15,3 +15,11 @@
     <Component name="Controller" />
   </GameAsset>
 </Structures>
+
+<Sounds>
+  <Sound name="found" path="./Assets/Sounds/found.ogg" background="false"/>
+  <Sound name="walking" path="./Assets/Sounds/walking.ogg" background="false"/>
+  <Sound name="run" path="./Assets/Sounds/run.ogg" background="false"/>
+  <Sound name="wall" path="./Assets/Sounds/wall.ogg" background="false"/>
+  <Sound name="main" path="./Assets/Sounds/main.ogg" background="true"/>
+</Sounds>

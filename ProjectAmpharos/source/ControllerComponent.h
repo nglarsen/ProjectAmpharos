@@ -13,15 +13,17 @@
 #define	CONTROLLERCOMPONENT_H
 
 #include "Component.h"
-#include "Define.h"
 
-class ResourceManager;
+#include "Define.h"
+#include "ResourceManager.h"
+
 class ArtAssetLibrary;
 class PhysicsAssetLibrary;
 class ObjectFactory;
 
 class ControllerComponent : public Component
 {
+public:
 	ControllerComponent(GameObject* owner);
 	~ControllerComponent();
 

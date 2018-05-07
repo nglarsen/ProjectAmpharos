@@ -15,8 +15,11 @@
 #include "GameObject.h"
 #include "Define.h"
 
+
 class TiXmlElement;
 class ResourceManager;
+class Component;
+
 
 class ObjectFactory
 {

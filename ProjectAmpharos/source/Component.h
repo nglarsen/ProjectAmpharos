@@ -12,11 +12,14 @@
 #ifndef COMPONENT_H
 #define	COMPONENT_H
 
-#include "GameObject.h"
 #include "Define.h"
+
+class GameObject;
+class ResourceManager;
 
 class Component
 {
+public:
 	Component(GameObject* owner);
 	~Component();
 	void OwnerDestroyed();

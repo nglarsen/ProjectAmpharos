@@ -13,12 +13,14 @@
 #define	BODYCOMPONENT_H
 
 #include "Component.h"
-#include "Define.h"
+
+class GameObject;
+class SpriteComponent;
 
 class BodyComponent : public Component
 {
 public:
-	BodyComponent(GameObject owner);
+	BodyComponent(GameObject* owner);
 	~BodyComponent();
 
 	bool Initialize(GAME_OBJECTFACTORY_PRESETS& presets);
@@ -26,14 +28,17 @@ public:
 	GameObject* Update();
 	void Finish();
 
-	GAME_FLT GetAngle();
+	GAME_FLT GetAngle() { return angle; }
 	ResourceManager* GetDevices() { return devices; }
-	GAME_VEC GetPosition() { return dPosition; }
+	GAME_VEC GetPosition() { return oldPosition; }
+	GAME_VEC GetDPosition() { return dPosition; }
+
 
 protected:
 	ResourceManager * devices;
 	GAME_VEC dPosition;
 	GAME_VEC oldPosition;
+	GAME_INT angle = 0;
 };
 
 

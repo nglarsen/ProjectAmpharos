@@ -11,15 +11,13 @@
 
 #ifndef COMPONENTSLIST_H
 #define COMPONENTSLIST_H
-
-#include "Define.h"
-GAME_COMPONENT_LIST clist;
+#pragma once
 
 #include "Component.h"
 #include "BodyComponent.h"
 
 #include "SpriteComponent.h"
-#include "ControllerComponent.h"
+//#include "ControllerComponent.h"
 
 #include "PowerupComponent.h"
 #include "ItemBlockComponent.h"

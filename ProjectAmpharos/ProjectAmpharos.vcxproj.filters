@@ -55,6 +55,36 @@
     <Filter Include="Source Files\Engine\Libraries">
       <UniqueIdentifier>{d6962d0f-e7a0-413a-acd3-936584f7ae5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Components\Children">
+      <UniqueIdentifier>{c27a8a39-0561-403c-a831-ca5334ed6b4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Misc">
+      <UniqueIdentifier>{2cc139de-7970-49e5-bc13-1b21adea7c01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Misc">
+      <UniqueIdentifier>{cc19a616-db9c-4749-9dd1-6ccc121028c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Components">
+      <UniqueIdentifier>{3f31c55b-40a4-4990-9cf2-29f02f7d72fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Components\Parent">
+      <UniqueIdentifier>{e23c915e-3454-4315-b66d-5e51775dbb9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Components\Children">
+      <UniqueIdentifier>{8da3400b-2481-45e7-873d-ff8406578636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Devices">
+      <UniqueIdentifier>{cb39accd-36c4-4829-a14b-c42bd0699e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\GameObject">
+      <UniqueIdentifier>{ec29976b-b81e-4842-a47b-e4cf11d58cf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\ThirdParty">
+      <UniqueIdentifier>{2cca9be2-7078-46de-a899-b3e34a196d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\ThirdParty\DLLs">
+      <UniqueIdentifier>{9d3cbcdc-8fae-4616-bb10-94a6e7bd0cb0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -75,8 +105,80 @@
     <ClCompile Include="source\ArtAssetLibrary.cpp">
       <Filter>Source Files\Engine\Libraries</Filter>
     </ClCompile>
+    <ClCompile Include="source\ObjectFactory.cpp">
+      <Filter>Source Files\Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameObject.cpp">
+      <Filter>Source Files\Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Component.cpp">
+      <Filter>Source Files\Engine\Components\Parent</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BodyComponent.cpp">
+      <Filter>Source Files\Engine\Components\Children</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ControllerComponent.cpp">
+      <Filter>Source Files\Engine\Components\Children</Filter>
+    </ClCompile>
+    <ClCompile Include="source\View.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ControllerDevice.cpp">
+      <Filter>Source Files\Engine\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GraphicsDevice.cpp">
+      <Filter>Source Files\Engine\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PhysicsDevice.cpp">
+      <Filter>Source Files\Engine\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ContactListener.cpp">
+      <Filter>Source Files\Engine\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SoundDevice.cpp">
+      <Filter>Source Files\Engine\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PhysicsAssetLibrary.cpp">
+      <Filter>Source Files\Engine\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ComponentAssetLibrary.cpp">
+      <Filter>Source Files\Engine\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SoundAssetLibrary.cpp">
+      <Filter>Source Files\Engine\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Timer.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SpriteComponent.cpp">
+      <Filter>Source Files\Engine\Components\Children</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tinyxml\tinystr.cpp">
+      <Filter>Resource Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tinyxml\tinyxml.cpp">
+      <Filter>Resource Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tinyxml\tinyxmlerror.cpp">
+      <Filter>Resource Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tinyxml\tinyxmlparser.cpp">
+      <Filter>Resource Files\ThirdParty</Filter>
+    </ClCompile>
     <ClCompile Include="source\Texture.cpp">
       <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ThirdParty\SDL2_gfx-1.0.1\SDL2_gfxPrimitives.c">
+      <Filter>Resource Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ThirdParty\SDL2_gfx-1.0.1\SDL2_rotozoom.c">
+      <Filter>Resource Files\ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ItemBlockComponent.cpp">
+      <Filter>Source Files\Engine\Components\Children</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PowerUpComponent.cpp">
+      <Filter>Source Files\Engine\Components\Children</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,9 +209,6 @@
     <ClInclude Include="source\GraphicsDevice.h">
       <Filter>Header Files\Engine\Devices</Filter>
     </ClInclude>
-    <ClInclude Include="source\SpriteComponent.h">
-      <Filter>Header Files\Engine\Components</Filter>
-    </ClInclude>
     <ClInclude Include="source\Component.h">
       <Filter>Header Files\Engine\Components\Parent</Filter>
     </ClInclude>
@@ -137,9 +236,6 @@
     <ClInclude Include="source\ComponentAssetLibrary.h">
       <Filter>Header Files\Engine\Libraries</Filter>
     </ClInclude>
-    <ClInclude Include="source\ObjectAssetLibrary.h">
-      <Filter>Header Files\Engine\Libraries</Filter>
-    </ClInclude>
     <ClInclude Include="source\SoundAssetLibrary.h">
       <Filter>Header Files\Engine\Libraries</Filter>
     </ClInclude>
@@ -158,23 +254,32 @@
     <ClInclude Include="source\ComponentsList.h">
       <Filter>Header Files\Engine\Components\List</Filter>
     </ClInclude>
-    <ClInclude Include="source\BodyComponent.h">
-      <Filter>Header Files\Engine\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ControllerComponent.h">
-      <Filter>Header Files\Engine\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="source\PowerUpComponent.h">
-      <Filter>Header Files\Engine\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ItemBlockComponent.h">
-      <Filter>Header Files\Engine\Components</Filter>
-    </ClInclude>
     <ClInclude Include="source\Template.h">
       <Filter>Resource Files\Templates</Filter>
     </ClInclude>
     <ClInclude Include="source\Box2DDebugDraw.h">
       <Filter>Header Files\Engine\Third Party</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BodyComponent.h">
+      <Filter>Header Files\Engine\Components\Children</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ControllerComponent.h">
+      <Filter>Header Files\Engine\Components\Children</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ItemBlockComponent.h">
+      <Filter>Header Files\Engine\Components\Children</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PowerUpComponent.h">
+      <Filter>Header Files\Engine\Components\Children</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SpriteComponent.h">
+      <Filter>Header Files\Engine\Components\Children</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ContactListener.h">
+      <Filter>Header Files\Engine\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ThirdParty\Box2D\Box2D.h">
+      <Filter>Resource Files\ThirdParty</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -184,5 +289,22 @@
     <Xml Include="source\Assets\Config\SpriteConfig.xml">
       <Filter>Resource Files\XML</Filter>
     </Xml>
+    <Xml Include="source\Assets\Config\MainLevel.xml">
+      <Filter>Resource Files\XML</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\SDL2.dll">
+      <Filter>Resource Files\ThirdParty\DLLs</Filter>
+    </None>
+    <None Include="source\SDL2_image.dll">
+      <Filter>Resource Files\ThirdParty\DLLs</Filter>
+    </None>
+    <None Include="source\SDL2_mixer.dll">
+      <Filter>Resource Files\ThirdParty\DLLs</Filter>
+    </None>
+    <None Include="source\SDL2_ttf.dll">
+      <Filter>Resource Files\ThirdParty\DLLs</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -21,6 +21,7 @@
 
 class PowerUpComponent : public Component
 {
+public:
 	//Init powerLevel to 0 (or MAREEP)
 	PowerUpComponent(GameObject* owner);
 	~PowerUpComponent();

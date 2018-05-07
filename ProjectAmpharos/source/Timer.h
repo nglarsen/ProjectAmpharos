@@ -17,6 +17,7 @@
 
 class Timer
 {
+public:
 	Timer();
 	bool Intitialize(GAME_INT);
 

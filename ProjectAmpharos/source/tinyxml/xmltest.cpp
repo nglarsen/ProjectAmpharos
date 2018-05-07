@@ -1,7 +1,7 @@
 /*
    Test program for TinyXML.
 */
-
+using namespace std;
 
 #ifdef TIXML_USE_STL
 	#include <iostream>

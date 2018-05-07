@@ -18,6 +18,8 @@ Texture::Texture()
 	texture = nullptr;
 	height = 0;
 	width = 0;
+	animationState = 0;
+	animationClip = 0;
 }
 
 Texture::~Texture()
@@ -27,11 +29,13 @@ Texture::~Texture()
 bool Texture::load(SDL_Renderer* renderer, std::string path)
 {
 	//not implemented
+	return true;
 }
 
 bool Texture::load(SDL_Texture* texture)
 {
 	//Not implemented
+	return true;
 }
 
 bool Texture::XMLLoad(SDL_Renderer* renderer, TiXmlElement* element)
@@ -71,6 +75,7 @@ bool Texture::XMLLoad(SDL_Renderer* renderer, TiXmlElement* element)
 			//Clip[i][j] where i is the state # and j is the animation #
 			//State is like running jumping etc
 			//Animation # is the series of xy values after it
+
 
 
 			element->QueryIntAttribute("numStates", &numStates);
@@ -123,8 +128,12 @@ void Texture::free()
 
 void Texture::Draw(SDL_Renderer * renderer, GAME_VEC position, GAME_FLT angle, SDL_Rect * clip)
 {
+	if (animationClip < numClips)
+		animationClip++;
+	else
+		animationClip = 0;
 	//Need to handle animation here but not positive how
 	//Sprite Component maybe keeps up with State and Clip via Update()
-	SDL_RenderCopyEx(renderer, texture, &this->clip[0][0], clip, angle, NULL, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(renderer, texture, &this->clip[animationState][animationClip], clip, angle, NULL, SDL_FLIP_NONE);
 
 }

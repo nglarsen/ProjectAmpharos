@@ -70,11 +70,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\lib\x86;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\lib\x86;$(LibraryPath);$(ProjectDir)source\ThirdParty\Box2D\Box2D\lib;$(ProjectDir)source\ThirdParty\SDL2\lib</LibraryPath>
-    <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\include;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\include;$(IncludePath);$(ProjectDir)source\ThirdParty\Box2D;$(ProjectDir)source\ThirdParty\SDL2\include</IncludePath>
+    <LibraryPath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\lib\x86;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.2\lib\x86;$(LibraryPath);$(ProjectDir)source\ThirdParty\Box2D\Box2D\lib;$(ProjectDir)source\ThirdParty\SDL2\lib</LibraryPath>
+    <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.4\;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.2\include;$(IncludePath);$(ProjectDir)source\ThirdParty\Box2D;$(ProjectDir)source\ThirdParty\SDL2\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\include;$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\include;$(ProjectDir)source\ThirdParty\SDL2\include;$(ProjectDir)source\ThirdParty\Box2D\Box2D;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0\include;$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1\include;$(ProjectDir)source\ThirdParty\SDL2\include;$(ProjectDir)source\ThirdParty\Box2D\;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)source\ThirdParty\SDL2\lib;$(ProjectDir)source\ThirdParty\Box2D\Box2D\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -83,10 +83,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0;%(AdditionalIncludeDirectories);$(ProjectDir)Source\ThirdParty\Box2D;$(ProjectDir)Source\ThirdParty\Box2D\Box2D;$(ProjectDir)Source\ThirdParty\SDL2\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Users\nglarsen\Documents\GitHub\ProjectAmpharos\ProjectAmpharos\source\ThirdParty\SDL2_mixer-2.0.2;$(ProjectDir)source\ThirdParty\SDL2_gfx-1.0.1;$(ProjectDir)source\ThirdParty\SDL2_mixer-2.0.0;%(AdditionalIncludeDirectories);$(ProjectDir)Source\ThirdParty\Box2D;$(ProjectDir)Source\ThirdParty\Box2D\Box2D;$(ProjectDir)Source\ThirdParty\SDL2\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies);Box2D.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_gfx.lib;</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies);Box2D.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;SDL2_mixer.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -96,6 +96,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)source\ThirdParty\Box2D\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -131,15 +132,38 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\ArtAssetLibrary.cpp" />
+    <ClCompile Include="source\BodyComponent.cpp" />
     <ClCompile Include="source\Box2DDebugDraw.cpp" />
+    <ClCompile Include="source\Component.cpp" />
+    <ClCompile Include="source\ComponentAssetLibrary.cpp" />
+    <ClCompile Include="source\ContactListener.cpp" />
+    <ClCompile Include="source\ControllerComponent.cpp" />
+    <ClCompile Include="source\ControllerDevice.cpp" />
     <ClCompile Include="source\Game.cpp" />
+    <ClCompile Include="source\GameObject.cpp" />
+    <ClCompile Include="source\GraphicsDevice.cpp" />
+    <ClCompile Include="source\ItemBlockComponent.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ObjectFactory.cpp" />
+    <ClCompile Include="source\PhysicsAssetLibrary.cpp" />
+    <ClCompile Include="source\PhysicsDevice.cpp" />
+    <ClCompile Include="source\PowerUpComponent.cpp" />
     <ClCompile Include="source\ResourceManager.cpp" />
-    <ClCompile Include="source\Texture.cpp" />
+    <ClCompile Include="source\SoundAssetLibrary.cpp" />
+    <ClCompile Include="source\SoundDevice.cpp" />
+    <ClCompile Include="source\SpriteComponent.cpp" />
     <ClCompile Include="source\Template.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="source\Texture.cpp" />
+    <ClCompile Include="source\ThirdParty\SDL2_gfx-1.0.1\SDL2_gfxPrimitives.c" />
+    <ClCompile Include="source\ThirdParty\SDL2_gfx-1.0.1\SDL2_rotozoom.c" />
+    <ClCompile Include="source\Timer.cpp" />
+    <ClCompile Include="source\tinyxml\tinystr.cpp" />
+    <ClCompile Include="source\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="source\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="source\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="source\View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\ArtAssetLibrary.h" />
@@ -148,6 +172,7 @@
     <ClInclude Include="source\Component.h" />
     <ClInclude Include="source\ComponentAssetLibrary.h" />
     <ClInclude Include="source\ComponentsList.h" />
+    <ClInclude Include="source\ContactListener.h" />
     <ClInclude Include="source\ControllerComponent.h" />
     <ClInclude Include="source\ControllerDevice.h" />
     <ClInclude Include="source\Define.h" />
@@ -155,7 +180,6 @@
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\GraphicsDevice.h" />
     <ClInclude Include="source\ItemBlockComponent.h" />
-    <ClInclude Include="source\ObjectAssetLibrary.h" />
     <ClInclude Include="source\ObjectFactory.h" />
     <ClInclude Include="source\PhysicsAssetLibrary.h" />
     <ClInclude Include="source\PhysicsDevice.h" />
@@ -168,6 +192,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="source\Texture.h" />
+    <ClInclude Include="source\ThirdParty\Box2D\Box2D.h" />
     <ClInclude Include="source\ThirdParty\SDL2\include\SDL.h" />
     <ClInclude Include="source\ThirdParty\SDL2\include\SDL_image.h" />
     <ClInclude Include="source\ThirdParty\SDL2\include\SDL_main.h" />
@@ -179,7 +204,14 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="source\Assets\Config\MainAssetConfig.xml" />
+    <Xml Include="source\Assets\Config\MainLevel.xml" />
     <Xml Include="source\Assets\Config\SpriteConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\SDL2.dll" />
+    <None Include="source\SDL2_image.dll" />
+    <None Include="source\SDL2_mixer.dll" />
+    <None Include="source\SDL2_ttf.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

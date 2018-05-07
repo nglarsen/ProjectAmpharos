@@ -25,6 +25,8 @@
 
 #include "Define.h"
 
+
+
 class ObjectFactory;
 
 class ResourceManager
@@ -39,7 +41,7 @@ public:
 	//Device Getters
 	GraphicsDevice* GetGraphicsDevice() { return gDevice; }
 	ControllerDevice* GetControllerDevice() { return cDevice; }
-	PhysicsDevice* GetPhysicsDevice() { return pDevice; }
+	PhysicsDevice* GetPhysicsDevice() { return physicsDevice; }
 	SoundDevice* GetSoundDevice() { return sDevice; }
 	
 	//Library Getters
@@ -62,7 +64,8 @@ public:
 	//Devices
 	void SetGraphicsDevice (GraphicsDevice * gDevice) {this->gDevice = gDevice;}
 	void SetControllerDevice(ControllerDevice* cDevice) { this->cDevice = cDevice; }
-	void SetPhysicsDevice(PhysicsDevice* pDevice) { this->pDevice = pDevice; }
+	//void SetPhysicsDevice(PhysicsDevice* physDevice) { this->physicsDevice = physDevice; }
+	void SetPhysicsDevice(PhysicsDevice* pDevice);
 	void SetSoundDevice(SoundDevice* sDevice) { this->sDevice = sDevice; }
 	
 	//Libraries
@@ -90,7 +93,7 @@ protected:
 	//Devices
 	GraphicsDevice * gDevice;
 	ControllerDevice* cDevice;
-	PhysicsDevice* pDevice;
+	PhysicsDevice* physicsDevice;
 	SoundDevice* sDevice;
 
 	//Libraries

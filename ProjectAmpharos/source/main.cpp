@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 //Resource Manager for device calls
 #include "ResourceManager.h"
 

@@ -48,8 +48,8 @@ bool ResourceManager::Initialize(GAME_INT SCREEN_WIDTH, GAME_INT SCREEN_HEIGHT, 
 	//=====================================
 	//Construct Graphics Device
 	//=====================================
-	gDevice = new GraphicsDevice();
-	if (!gDevice->Initialize())
+	gDevice = new GraphicsDevice(SCREEN_WIDTH, SCREEN_HEIGHT);
+	if (!gDevice->Initialize(false))
 	{
 		PrintError();
 	}
@@ -67,9 +67,9 @@ bool ResourceManager::Initialize(GAME_INT SCREEN_WIDTH, GAME_INT SCREEN_HEIGHT, 
 	//=====================================
 	//Construct Physics Device:
 	//=====================================
-	pDevice = new PhysicsDevice();
+	physicsDevice = new PhysicsDevice(0,0);
 
-	if (!pDevice->Initialize())
+	if (!physicsDevice->Initialize())
 	{
 		PrintError();
 	}
@@ -109,15 +109,15 @@ bool ResourceManager::Initialize(GAME_INT SCREEN_WIDTH, GAME_INT SCREEN_HEIGHT, 
 	{
 		PrintError();
 	}
-	//=====================================
-	//Construct Object Library
-	//=====================================
-	objectLibrary = new ObjectAssetLibrary();
+	////=====================================
+	////Construct Object Library
+	////=====================================
+	//objectLibrary = new ObjectAssetLibrary();
 
-	if (!objectLibrary->Initialize())
-	{
-		PrintError();
-	}
+	//if (!objectLibrary->Initialize())
+	//{
+	//	PrintError();
+	//}
 	//=====================================
 	//Construct Sound Library
 	//=====================================
@@ -163,28 +163,124 @@ bool ResourceManager::Initialize(GAME_INT SCREEN_WIDTH, GAME_INT SCREEN_HEIGHT, 
 			//find the component
 			if (currentComponent == "Body")
 			{
+				GAME_PHYSICS physics;
+				compElement->QueryFloatAttribute("density", &physics.density);
+				compElement->QueryFloatAttribute("restitution", &physics.restitution);
+				compElement->QueryFloatAttribute("angularDamping", &physics.angularDamping);
+				compElement->QueryBoolAttribute("physicsOn", &physics.physicsOn);
+				std::string bodyType;
+				std::string bodyShape;
+				compElement->QueryStringAttribute("bodyType", &bodyType);
+				compElement->QueryStringAttribute("bodyShape", &bodyShape);
+
+				if (bodyType == "GAME_DYNAMIC") { physics.bodyType = GAME_DYNAMIC; }
+				else if (bodyType == "GAME_KINEMATIC") { physics.bodyType = GAME_KINEMATIC; }
+				else if (bodyType == "GAME_STATIC") { physics.bodyType = GAME_STATIC; }
+
+				if (bodyShape == "GAME_RECTANGLE") { physics.bodyShape = GAME_RECTANGLE; }
+				else if (bodyShape == "GAME_CIRCLE") { physics.bodyShape = GAME_CIRCLE; }
+
+				physicsLibrary->AddAsset(assetName, physics);
+				componentList.push_back(GAME_BODY_COMP);
 
 			}
 			else if(currentComponent == "Controller")
 			{
-			
+				componentList.push_back(GAME_CONTROL_COMP);
 			}
 			else if (currentComponent == "ItemBlock") 
 			{
-			
+				componentList.push_back(GAME_ITEMBLOCK_COMP);
 			}
 			else if (currentComponent == "PowerUp")
 			{
-			
+				componentList.push_back(GAME_POWERUP_COMP);
 			}
 			else if (currentComponent == "Sprite") 
 			{
 				artLibrary->AddAsset(assetName, spriteConfig);
 				componentList.push_back(GAME_SPRITE_COMP);
 			}
-		}
 
+			else
+			{
+				printf("INVALID component in assets.xml %s", currentComponent.c_str());
+				return false;
+			}
+			compElement = compElement->NextSiblingElement();
+		}
+		if (componentList.empty()) { return false; }
+		componentLibrary->AddAsset(assetName, componentList);
 		
+		asset = asset->NextSiblingElement();
+	} while (asset);
+	assetType = assetType->NextSiblingElement();
+
+	TiXmlElement* sounds = assetType->FirstChildElement();
+	
+	while (sounds)
+	{
+		std::string name;
+		sounds->QueryStringAttribute("name", &name);
+		std::string path;
+		sounds->QueryStringAttribute("path", &path);
+		bool background;
+		sounds->QueryBoolAttribute("background", &background);
+
+		//add to library based on background music or not.
+		if (background)
+		{
+			soundLibrary->AddBackgroundMusic(name, path);
+		}
+		else
+		{
+			soundLibrary->AddSoundEffect(name, path);
+		}
+		sounds = sounds->NextSiblingElement();
 	}
 
+	//======================================
+	//Set up debugging
+	//======================================
+
+
+
+	Box2DDebugDraw* debugDraw = new Box2DDebugDraw();
+	debugDraw->Initialize(this);
+	debugDraw->SetFlags(b2Draw::e_shapeBit | b2Draw::e_aabbBit);
+
+	if (debugDraw != NULL)
+	{
+		physicsDevice->getWorld()->SetDebugDraw(debugDraw);
+	}
+	return true;
+}
+
+bool ResourceManager::ShutDown()
+{
+	cDevice = nullptr;
+	
+	soundLibrary->Finish();
+	soundLibrary = NULL;
+
+	gDevice->ShutDown();
+	gDevice = NULL;
+
+	sDevice->ShutDown();
+	sDevice = NULL;
+
+	physicsDevice = NULL;
+
+	artLibrary = NULL;
+	physicsLibrary = NULL;
+	objectLibrary = NULL;
+
+	objectFactory = NULL;
+
+	return true;
+}
+
+void ResourceManager::SetPhysicsDevice(PhysicsDevice * pDevice)
+{
+	this->physicsDevice = pDevice;
 }

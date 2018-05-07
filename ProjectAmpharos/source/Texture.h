@@ -38,6 +38,7 @@ public:
 	SDL_Rect** getClip() { return clip; }
 	std::string getName() { return name; }
 
+
 private:
 	SDL_Texture * texture;
 	SDL_Rect** clip;
@@ -46,7 +47,7 @@ private:
 	int numClips;
 	int numStates;
 	int animationState;
-
+	int animationClip;
 
 	std::string name;
 };

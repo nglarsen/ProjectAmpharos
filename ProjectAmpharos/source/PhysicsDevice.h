@@ -17,7 +17,9 @@
 #include <Box2D.h>
 #include "Texture.h"
 #include "PhysicsAssetLibrary.h"
-#include "GameObject.h"
+
+
+class GameObject;
 
 class PhysicsDevice
 {
@@ -36,7 +38,7 @@ public:
 	bool SetLinearVelocity(GameObject* object, GAME_VEC linearVelocity);
 	bool SetAngularVelocity(GameObject* object, GAME_FLT angularVelocity);
 	bool SetTorque(GameObject* object, GAME_FLT torque);
-	bool SetLinearImpulse(GameObject* object, GAME_FLT torque);
+	bool SetLinearImpulse(GameObject* object, GAME_VEC forceVec, GAME_VEC forceCenter);
 	bool SetStatic(GameObject* object);
 	bool SetStopPhysics(GameObject* object);
 	bool SetAngle(GameObject* object, GAME_FLT angle);

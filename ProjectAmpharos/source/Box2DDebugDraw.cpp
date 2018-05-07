@@ -10,7 +10,7 @@
 ////////////////////////////////////////
 
 #include "Box2DDebugDraw.h"
-#include <SDL2_gfxPrimitives.h>
+
 
 Box2DDebugDraw::Box2DDebugDraw()
 {
@@ -84,10 +84,11 @@ void Box2DDebugDraw::DrawSolidPolygon(const b2Vec2 *vertices, int32 vertexCount,
 
 }
 
-void Box2DDebugDraw::DrawCircle(const b2Vec2 & center, float32 radius, const b2Vec2 & axis, const b2Color & color)
+void Box2DDebugDraw::DrawCircle(const b2Vec2 & center, float32 radius, const b2Color & color)
 {
 	//TODO:
 }
+
 
 void Box2DDebugDraw::DrawSegment(const b2Vec2 & p1, const b2Vec2 & p2, const b2Color & color)
 {
@@ -97,6 +98,11 @@ void Box2DDebugDraw::DrawSegment(const b2Vec2 & p1, const b2Vec2 & p2, const b2C
 
 
 void Box2DDebugDraw::DrawTransform(const b2Transform & xf)
+{
+	//TODO:
+}
+
+void Box2DDebugDraw::DrawSolidCircle(const b2Vec2 & center, float32 radius, const b2Vec2 & axis, const b2Color & color)
 {
 	//TODO:
 }

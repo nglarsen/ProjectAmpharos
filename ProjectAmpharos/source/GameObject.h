@@ -12,11 +12,13 @@
 #ifndef GAMEOBJECT_H
 #define	GAMEOBJECT_H
 
+#include <memory>
 #include <iostream>
 #include <vector>
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include "Define.h"
+#include "ComponentsList.h"
 
 class Component;
 class GraphicsDevice;
@@ -32,18 +34,17 @@ public:
 	void AddComponent(Component* component);
 
 	template<class T>
-	T* GetCompoent()
+	T* GetComponent()
 	{
 		for (auto comp : components)
 		{
-			T* target;
-			if ((target == std::dynamic_pointer_cast<T>(comp)))
+			T* target = nullptr;
+			if (target = dynamic_cast<T*>(comp))
 			{
 				return(target);
 			}
 		}
-
-		return(T*());
+		return(nullptr);
 	}
 
 	GameObject* Update();
@@ -52,6 +53,8 @@ public:
 
 	std::string getObjectType() { return objectType; }
 	GameObject* GetJoinedWith() { return joinedWith; }
+
+	bool removeComponents();
 
 protected:
 	std::vector<Component*> components;

@@ -27,7 +27,7 @@ public:
 
 private:
 	GAME_EVENT Translate(SDL_Event* sEvent);
-	SDL_Event _event;
+	SDL_Event* _event;
 	std::map<GAME_EVENT, bool> keyStates;
 };
 

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Level>
+  
+  <Object name="Player" xPos="0" yPos="350" angle="0"></Object>
+  
+  <Object name="Block" xPos="0" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="18" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="36" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="54" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="72" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="90" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="108" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="126" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="144" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="162" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="180" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="198" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="216" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="234" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="252" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="270" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="288" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="306" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="324" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="342" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="360" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="378" yPos="450" angle="0"></Object>
+  <Object name="Block" xPos="396" yPos="450" angle="0"></Object>
+
+
+
+</Level>

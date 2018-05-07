@@ -13,16 +13,16 @@
 #define	GRAPHICSDEVICE_H
 
 #include <vector>
-#include <map>
+
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-#include "SpriteComponent.h"
-
 #include "Define.h"
 
+class SpriteComponent;
 class View;
+class GameObject;
 
 class GraphicsDevice
 {
@@ -43,28 +43,30 @@ public:
 	void Text2Screen(std::string text, GAME_VEC position);
 	void Text2Screen(std::string text, GAME_FLT x, GAME_FLT y);
 	void Notice2Screen(std::string text);
-	void Menu2Screen(std::vector<std::string>);
+	//TODO: void Menu2Screen(std::vector<std::string>);
 
 	void DrawFilledCircle(GAME_VEC position, GAME_INT radius, GAME_RGBA RGBA);
 	bool DrawBox(GAME_VEC topLeft, GAME_VEC bottomRight, GAME_RGBA RGBA);
 
-	void DrawOverlay
-	(
-		//DEV NOTE: Thanks for this, I think this is what I was looking for with Menu2Screen
-		//round corner box that contains overlay
-		GAME_VEC topLeft, GAME_VEC bottomRight, GAME_RGBA boxBackgroundColor, GAME_RGBA boxBorderColor,
-		//Any objects drawn in the stated box at given position
-		std::map<Texture*, GAME_VEC> objects
-	);
+	//void DrawOverlay
+	//(
+	//	//DEV NOTE: Thanks for this, I think this is what I was looking for with Menu2Screen
+	//	//round corner box that contains overlay
+	//	GAME_VEC topLeft, GAME_VEC bottomRight, GAME_RGBA boxBackgroundColor, GAME_RGBA boxBorderColor,
+	//	//Any objects drawn in the stated box at given position
+	//	std::map<Texture*, GAME_VEC> objects
+	//);
 
+
+	void PrintError() { printf("Error at breakpoint"); system("Pause"); exit(1); }
 	void ReverseOrder();
 
 	//Curious about this one
 	GameObject* GetExit() { return levelExit; }
 
 	//Accessors
-	void AddSpriteRenderer(SpriteComponent*);
-	void RemoveSpriteRenderer(SpriteComponent*);
+	void AddSpriteRenderer(SpriteComponent*,int);
+	void RemoveSpriteRenderer(SpriteComponent*,int);
 
 	//Getters
 	SDL_Renderer* GetRenderer();
@@ -91,16 +93,16 @@ private:
 	std::vector<SpriteComponent*> sprites;
 	View* view;
 
-	typedef struct overlay
-	{
-		GAME_VEC topLeft;
-		GAME_VEC bottomRight;
-		GAME_RGBA boxBackgroundColor;
-		GAME_RGBA boxBorderColor;
-		std::map<Texture*, GAME_VEC> objects;
-	}overlay;
+	//typedef struct overlay
+	//{
+	//	GAME_VEC topLeft;
+	//	GAME_VEC bottomRight;
+	//	GAME_RGBA boxBackgroundColor;
+	//	GAME_RGBA boxBorderColor;
+	//	std::map<Texture*, GAME_VEC> objects;
+	//}overlay;
 
-	std::vector<overlay> overlays;
+	//std::vector<overlay> overlays;
 
 	TTF_Font* font;
 	GAME_RGBA color;

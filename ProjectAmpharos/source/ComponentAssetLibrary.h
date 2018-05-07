@@ -28,6 +28,8 @@ public:
 	std::vector<Component*> Search(std::string name, GameObject* owner);
 	bool AddAsset(std::string name, std::vector<GAME_COMPONENT_LIST> componentList);
 
+	
+
 private:
 				//name				//List of components
 	std::map<std::string, std::vector<GAME_COMPONENT_LIST>> componentLibrary;

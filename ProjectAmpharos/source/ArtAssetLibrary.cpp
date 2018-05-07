@@ -19,9 +19,11 @@ ArtAssetLibrary::ArtAssetLibrary()
 bool ArtAssetLibrary::Initialize(GraphicsDevice* gDevice)
 {
 	this->gDevice = gDevice;
+	return true;
 }
 Texture* ArtAssetLibrary::Search(std::string key)
 {
+	if (key == "Player") { key = "Mareep"; }
 	return (artLibrary.find(key)->second);
 }
 bool ArtAssetLibrary::AddAsset(std::string name, std::string path)
@@ -40,14 +42,16 @@ bool ArtAssetLibrary::AddAsset(std::string name, std::string path)
 	do
 	{
 		Texture* tmpTexture = new Texture();
+		if (name == "Player") name = "Mareep";
 		if (name == spriteElement->Attribute("name"))
 		{
 			artLibrary[name] = new Texture();
 			artLibrary[name]->XMLLoad(gDevice->GetRenderer(), spriteElement);
+			spriteElement = spriteElement->NextSiblingElement();
 		}
 		else
 		{
-			spriteElement->NextSiblingElement();
+			spriteElement = spriteElement->NextSiblingElement();
 		}
 
 	} while (spriteElement);
